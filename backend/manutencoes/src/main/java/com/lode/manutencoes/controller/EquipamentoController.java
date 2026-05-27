@@ -4,6 +4,9 @@ import com.lode.manutencoes.Dto.EquipamentoDto;
 import com.lode.manutencoes.model.Equipamento;
 import com.lode.manutencoes.service.EquipamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,11 +22,9 @@ public class EquipamentoController {
 
 
     @GetMapping
-    public List<EquipamentoDto> listarTodos(){
-        List<Equipamento> equipamentos = service.listarTodos();
-        return equipamentos.stream()
-                .map(EquipamentoDto::new)
-                .toList();
+    public Page<EquipamentoDto> listarTodos(@PageableDefault(size = 10, page = 0,sort = "nome")Pageable pageable){
+        Page<Equipamento> equipamentos = service.listarTodos(pageable);
+        return equipamentos.map(EquipamentoDto::new);
     }
 
     @GetMapping("/{id}")

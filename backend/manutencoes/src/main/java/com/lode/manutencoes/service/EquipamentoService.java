@@ -4,9 +4,10 @@ package com.lode.manutencoes.service;
 import com.lode.manutencoes.model.Equipamento;
 import com.lode.manutencoes.repository.EquipamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -15,8 +16,8 @@ public class EquipamentoService {
     @Autowired
     private EquipamentoRepository repository;
 
-    public List<Equipamento> listarTodos(){
-        return repository.findAll();
+    public Page<Equipamento> listarTodos(Pageable pageable){
+        return repository.findAll(pageable);
     }
 
     public Optional<Equipamento> buscarPorId(Integer id){
