@@ -35,31 +35,19 @@ public class EquipamentoController {
 
     @PostMapping
     public ResponseEntity<EquipamentoDto> salvar(@RequestBody Equipamento equipamento) {
-        try {
             Equipamento novoEquipamento = service.salvar(equipamento);
             return ResponseEntity.ok(new EquipamentoDto(novoEquipamento));
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().build();
-        }
     }
 
     @PatchMapping("/{id}/status")
     public ResponseEntity<EquipamentoDto> alterarStatus(@PathVariable Integer id, @RequestParam String novoStatus){
-        try {
             Equipamento equipamentoAtualizado = service.alterarStatus(id, novoStatus);
             return ResponseEntity.ok(new EquipamentoDto(equipamentoAtualizado));
-        } catch (IllegalArgumentException e){
-            return ResponseEntity.notFound().build();
-        }
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(@PathVariable Integer id){
-        try {
             service.deletar(id);
             return ResponseEntity.noContent().build();
-        } catch (IllegalArgumentException e){
-            return ResponseEntity.notFound().build();
-        }
     }
 }
