@@ -3,7 +3,7 @@ package com.lode.manutencoes.service;
 
 import com.lode.manutencoes.model.Equipamento;
 import com.lode.manutencoes.repository.EquipamentoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class EquipamentoService {
 
-    @Autowired
-    private EquipamentoRepository repository;
+    private final EquipamentoRepository repository;
 
     public Page<Equipamento> listarTodos(Pageable pageable){
         return repository.findAll(pageable);

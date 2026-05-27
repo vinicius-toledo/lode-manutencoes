@@ -3,22 +3,20 @@ package com.lode.manutencoes.controller;
 import com.lode.manutencoes.Dto.EquipamentoDto;
 import com.lode.manutencoes.model.Equipamento;
 import com.lode.manutencoes.service.EquipamentoService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/api/equipamentos")
 @CrossOrigin(origins = "*")
+@RequiredArgsConstructor
 public class EquipamentoController {
 
-    @Autowired
-    private EquipamentoService service;
+    private final EquipamentoService service;
 
 
     @GetMapping
