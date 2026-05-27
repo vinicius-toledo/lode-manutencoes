@@ -1,5 +1,6 @@
 <script setup>
 
+import { ssrExportNameKey } from 'vite/module-runner'
 import { ref, onMounted, computed } from 'vue'
 
 
@@ -38,4 +39,43 @@ onMounted(() => {
 })
 </script>
 
+<template>
+  <div class="container">
+    <header>
+      <h1>Sistema de Monitoramento de Equipamentos </h1>
+      <p>Gestão e controle de manutenção em tempo real</p>
+    </header>
 
+    <div class="busca-container">
+      <input v-model="busca" 
+             type="text" 
+             placeholder="Digite o nome do equipamento para filtrar..." 
+             class="input-busca"
+             />
+    </div>
+
+    <main class="grid-equipamentos">
+      <div 
+          v-for="equipamento in equipamentosFiltrados" 
+          :key="equipamento.id" 
+          class="card"
+      >
+        <div class="card-header">
+          <h3>{{ equipamento.nome }}</h3>
+          <span :class="['badge' , obterCorStatus(equipamento.status)]">
+            {{ equipamento.status }}
+          </span>
+        </div>
+
+        <div class="card-body">
+          <p><strong>Tipo:</strong>{{ equipamento.tipo || 'Não informado'}}</p>
+          <p><strong>Instalação:</strong> {{ equipamento.dataInstalacao || '---' }}</p>
+        </div>
+    </div>
+
+    <div v-if="equipamentosFiltrados.length === 0" class="sem-dados">
+      <p>Nenhum equipamento encontrado com o nome "{{ busca }}"</p>
+    </div>
+    </main>
+  </div>
+</template>
