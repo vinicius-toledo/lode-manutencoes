@@ -79,3 +79,129 @@ onMounted(() => {
     </main>
   </div>
 </template>
+
+<style scoped>
+/* Estilos estruturais e de fontes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+header h1 {
+  color: #1a202c;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  color: #718096;
+}
+
+/* Customização do Input de Busca */
+.busca-container {
+  margin-bottom: 2rem;
+}
+
+.input-busca {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-busca:focus {
+  border-color: #42b883; /* Cor verde oficial do Vue */
+}
+
+/* Layout da Grid Responsiva */
+.grid-equipamentos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Estilização Moderna dos Cards */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #edf2f7;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  padding: 1.25rem;
+  border-bottom: 1px solid #edf2f7;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.card-header h3 {
+  font-size: 1.15rem;
+  margin: 0;
+  color: #2d3748;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-body p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #4a5568;
+}
+
+/* Estilização das Badges com Cores do Teste */
+.badge {
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.status-operacional {
+  background-color: #c6f6d5;
+  color: #22543d;
+}
+
+.status-manutencao {
+  background-color: #feebc8;
+  color: #744210;
+}
+
+.status-critico {
+  background-color: #fed7d7;
+  color: #742a2a;
+}
+
+.status-padrao {
+  background-color: #e2e8f0;
+  color: #4a5568;
+}
+
+.sem-dados {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  color: #a0aec0;
+  font-size: 1.1rem;
+}
+</style>
