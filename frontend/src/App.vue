@@ -11,7 +11,8 @@ const carregarEquipamentos = async () =>{
   try{ 
     const resposta = await fetch('http://localhost:8080/api/equipamentos')
     if(resposta.ok){
-      equipamentos.value = await resposta.json()
+      const dados = await resposta.json()
+      equipamentos.value = dados.content 
     } else {
       console.error('Erro ao carregar equipamentos da API')
     }
