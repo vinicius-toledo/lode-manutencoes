@@ -1,4 +1,4 @@
-package com.lode.manutencoes.Dto;
+package com.lode.manutencoes.dto;
 
 import com.lode.manutencoes.model.Equipamento;
 import java.time.LocalDate;

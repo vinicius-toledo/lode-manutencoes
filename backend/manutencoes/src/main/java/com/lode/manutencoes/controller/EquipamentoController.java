@@ -1,6 +1,6 @@
 package com.lode.manutencoes.controller;
 
-import com.lode.manutencoes.Dto.EquipamentoDto;
+import com.lode.manutencoes.dto.EquipamentoDto;
 import com.lode.manutencoes.model.Equipamento;
 import com.lode.manutencoes.service.EquipamentoService;
 import lombok.RequiredArgsConstructor;
