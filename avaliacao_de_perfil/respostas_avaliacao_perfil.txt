@@ -1,0 +1,28 @@
+AVALIAÇÃO DE PERFIL — LODE SISTEMAS
+=====================================
+
+1. ANÁLISE — Bug "os dados não aparecem na tela"
+-------------------------------------------------
+Primeiro verifico o console do navegador para ver se há erros de JavaScript
+ou falha na requisição. Depois inspeciono a aba Network para confirmar se a
+chamada à API está sendo feita e qual resposta está retornando. Se a API
+retornar erro, subo para o backend e verifico os logs do Spring Boot. Se o
+backend estiver ok, verifico a conexão com o banco e se a query está
+retornando dados corretamente.
+
+
+2. TRABALHO EM EQUIPE — Colega atrasado com entrega crítica
+------------------------------------------------------------
+Assim que termino minha tarefa, me ofereço para ajudar o colega. Pergunto
+onde está travado e se posso assumir alguma parte da entrega. Se o problema
+for técnico, tentamos resolver juntos. O sucesso do deploy é
+responsabilidade do time, não de uma pessoa só.
+
+
+3. GIT — Criando uma nova funcionalidade sem conflitos
+------------------------------------------------------
+Crio uma branch a partir da main atualizada: git checkout -b feat/nome-da-funcionalidade.
+Faço commits frequentes durante o desenvolvimento. Antes de abrir o PR,
+rodo git pull origin main para trazer as mudanças mais recentes e resolvo
+eventuais conflitos localmente. Depois abro o Pull Request para revisão
+antes de mergear.
