@@ -41,7 +41,7 @@ CREATE DATABASE lode_db;
 | Host | `localhost:5432` |
 | Banco | `lode_db` |
 | Usuário | `postgres` |
-| Senha | `admin123` |
+| Senha | `SUA_SENHA_AQUI` -> ADICIONE A SENHA DO SEU PostgreSQL AQUI.|
 
 > Se as suas credenciais forem diferentes, edite o arquivo:
 > `backend/manutencoes/src/main/resources/application.properties`
@@ -147,11 +147,7 @@ Configurado via `WebConfig` com `@Value` lendo a origem permitida do `applicatio
 
 ## 🗃️ Dados de Teste
 
-Você pode popular o banco de duas formas:
-
-### Opção 1 — SQL direto no PostgreSQL
-
-Execute no **pgAdmin** ou no terminal (`psql -U postgres -d lode_db`):
+Para visualizar a aplicação funcionando com dados reais, você pode popular o banco de dados rapidamente. Execute o script abaixo no **pgAdmin** ou no terminal (`psql -U postgres -d lode_db`):
 
 ```sql
 INSERT INTO equipamentos (nome, tipo, data_instalacao, status) VALUES
@@ -167,67 +163,6 @@ INSERT INTO equipamentos (nome, tipo, data_instalacao, status) VALUES
 
 ---
 
-### Opção 2 — Via API (cURL)
-
-Com o backend rodando em `http://localhost:8080`, execute cada comando abaixo:
-
-**Bomba Submersa Central — Operacional**
-```bash
-curl -X POST http://localhost:8080/api/equipamentos \
-  -H "Content-Type: application/json" \
-  -d "{\"nome\": \"Bomba Submersa Central\", \"tipo\": \"Bomba\", \"dataInstalacao\": \"2021-03-10\", \"status\": \"Operacional\"}"
-```
-
-**Bomba Auxiliar Poço 2 — Manutenção Necessária**
-```bash
-curl -X POST http://localhost:8080/api/equipamentos \
-  -H "Content-Type: application/json" \
-  -d "{\"nome\": \"Bomba Auxiliar Po\\u00e7o 2\", \"tipo\": \"Bomba\", \"dataInstalacao\": \"2019-07-22\", \"status\": \"Manut\\u00ean\\u00e7\\u00e3o Necess\\u00e1ria\"}"
-```
-
-**Painel Elétrico Principal — Operacional**
-```bash
-curl -X POST http://localhost:8080/api/equipamentos \
-  -H "Content-Type: application/json" \
-  -d "{\"nome\": \"Painel El\\u00e9trico Principal\", \"tipo\": \"Painel\", \"dataInstalacao\": \"2020-11-05\", \"status\": \"Operacional\"}"
-```
-
-**Painel de Controle Poço 3 — Crítico**
-```bash
-curl -X POST http://localhost:8080/api/equipamentos \
-  -H "Content-Type: application/json" \
-  -d "{\"nome\": \"Painel de Controle Po\\u00e7o 3\", \"tipo\": \"Painel\", \"dataInstalacao\": \"2018-04-18\", \"status\": \"Cr\\u00edtico\"}"
-```
-
-**Tubulação Rede Norte — Operacional**
-```bash
-curl -X POST http://localhost:8080/api/equipamentos \
-  -H "Content-Type: application/json" \
-  -d "{\"nome\": \"Tubula\\u00e7\\u00e3o Rede Norte\", \"tipo\": \"Tubula\\u00e7\\u00e3o\", \"dataInstalacao\": \"2022-01-30\", \"status\": \"Operacional\"}"
-```
-
-**Tubulação Setor Sul — Manutenção Necessária**
-```bash
-curl -X POST http://localhost:8080/api/equipamentos \
-  -H "Content-Type: application/json" \
-  -d "{\"nome\": \"Tubula\\u00e7\\u00e3o Setor Sul\", \"tipo\": \"Tubula\\u00e7\\u00e3o\", \"dataInstalacao\": \"2017-09-14\", \"status\": \"Manut\\u00ean\\u00e7\\u00e3o Necess\\u00e1ria\"}"
-```
-
-**Bomba de Pressão Reserva — Crítico**
-```bash
-curl -X POST http://localhost:8080/api/equipamentos \
-  -H "Content-Type: application/json" \
-  -d "{\"nome\": \"Bomba de Press\\u00e3o Reserva\", \"tipo\": \"Bomba\", \"dataInstalacao\": \"2023-06-01\", \"status\": \"Cr\\u00edtico\"}"
-```
-
-**Painel de Monitoramento — Operacional**
-```bash
-curl -X POST http://localhost:8080/api/equipamentos \
-  -H "Content-Type: application/json" \
-  -d "{\"nome\": \"Painel de Monitoramento\", \"tipo\": \"Painel\", \"dataInstalacao\": \"2024-02-20\", \"status\": \"Operacional\"}"
-```
-
----
 
 ### ✅ Resultado esperado no frontend
 
