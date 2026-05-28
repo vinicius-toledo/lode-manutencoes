@@ -1,6 +1,5 @@
 <script setup>
 
-import { ssrExportNameKey } from 'vite/module-runner'
 import { ref, onMounted, computed } from 'vue'
 
 
@@ -82,7 +81,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-/* Estilos estruturais e de fontes */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -106,7 +105,6 @@ header p {
   color: #718096;
 }
 
-/* Customização do Input de Busca */
 .busca-container {
   margin-bottom: 2rem;
 }
@@ -122,17 +120,15 @@ header p {
 }
 
 .input-busca:focus {
-  border-color: #42b883; /* Cor verde oficial do Vue */
+  border-color: #42b883; 
 }
 
-/* Layout da Grid Responsiva */
 .grid-equipamentos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
 }
 
-/* Estilização Moderna dos Cards */
 .card {
   background: white;
   border-radius: 12px;
@@ -168,7 +164,6 @@ header p {
   color: #4a5568;
 }
 
-/* Estilização das Badges com Cores do Teste */
 .badge {
   padding: 4px 10px;
   border-radius: 9999px;
