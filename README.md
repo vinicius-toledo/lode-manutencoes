@@ -54,15 +54,14 @@ As tabelas são criadas **automaticamente** pelo Hibernate na primeira execuçã
 
 ### 1. Backend (Spring Boot)
 
-```bash
-# Entre na pasta do backend
-cd backend/manutencoes
+** Pelo IntelliJ IDEA (recomendado):**
 
-# Execute o projeto
-./mvnw spring-boot:run
-```
+1. Abra a pasta `backend/manutencoes` no IntelliJ
+2. Aguarde o Maven baixar as dependências
+3. Navegue até o arquivo `src/main/java/com/lode/manutencoes/ManutencoesApplication.java`
+4. Clique no botão ▶️ **Play** no canto superior direito (ou ao lado do nome da classe)
+5. O backend vai iniciar e você verá `Started ManutencoesApplication` no terminal
 
-> No Windows, use `mvnw.cmd spring-boot:run`
 
 A API estará disponível em: `http://localhost:8080`
 
@@ -89,11 +88,12 @@ A aplicação estará disponível em: `http://localhost:5173`
 
 ## 🧪 Rodando os Testes Unitários
 
-```bash
-cd backend/manutencoes
+** Pelo IntelliJ IDEA (recomendado):**
 
-./mvnw test
-```
+1. Navegue até o arquivo `src/test/java/com/lode/manutencoes/EquipamentoServiceTest.java`
+2. Clique no botão ▶️ **Play** no canto superior direito
+3. Os resultados aparecem na aba **Run** na parte inferior do IntelliJ
+4. Testes com ✅ verde = passou | ❌ vermelho = falhou
 
 Os testes cobrem:
 - ✅ Impedir o cadastro de equipamento sem nome
